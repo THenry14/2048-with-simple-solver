@@ -21,7 +21,6 @@ public:
 
 private:
 
-	char getinput();
     void drawBoard();
     void aiSolver();
 	void checkResult();
