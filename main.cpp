@@ -7,12 +7,7 @@ Implementation of 2048 game and its solver
 */
 
 #include "class2048.h"
-#include <time.h>
-#include <iostream>
-#include <string>
 #include <iomanip>
-#include <windows.h>
-#include <conio.h>
 #include <algorithm>																
 
 using namespace std;									

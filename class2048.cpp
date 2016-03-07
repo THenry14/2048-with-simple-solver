@@ -1,11 +1,9 @@
 #include "class2048.h"
-#include <time.h>
 #include <iostream>
 #include <string>
 #include <iomanip>
 #include <windows.h>
 #include <conio.h>
-#include <algorithm>
 
 typedef unsigned int uint;
 using namespace std;										
