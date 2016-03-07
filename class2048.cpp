@@ -53,14 +53,6 @@ void clearScreen() {
 	cout << s << endl << endl;
     }
 
-	char game2048::getinput(){
-    	if (_kbhit()){
-       		_getch();
-        	return _getch();				//this method ensures that after pressing a key an action is taken without need to press enter
-    	}
-    return 0;
-	};
-
     void game2048::drawBoard(){
        clearScreen();
 	cout << "SCORE: " << score << endl << endl;
@@ -124,7 +116,6 @@ void clearScreen() {
     void game2048::waitKey(){
 	moved = false;
 	cout << "(W)Up (S)Down (A)Left (D)Right (P)AI Solver \n\n";
-	getinput();
 	switch(_getch()){
 	    case 'w': move( UP );break;
 	    case 'a': move( LEFT ); break;
