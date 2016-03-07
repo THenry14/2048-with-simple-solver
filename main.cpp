@@ -19,5 +19,10 @@ int main( int argc, char* argv[] )
 {
     srand( static_cast<uint>( time( NULL ) ) );
     game2048 g; g.start();
-    return system( "pause" );
+
+    // Wait for user input to see how game ends. Useful on Windows.
+    char c;
+    cin >> c;
+
+    return EXIT_SUCCESS;
 }
