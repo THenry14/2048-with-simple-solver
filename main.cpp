@@ -16,5 +16,5 @@ int main( int argc, char* argv[] )
 {
     srand( static_cast<uint>( time( NULL ) ) );
     game2048 g; g.start();
-    return system( "pause" );
+    return EXIT_SUCCESS;
 }
