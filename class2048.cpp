@@ -2,11 +2,20 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include <windows.h>
 #include <conio.h>
 
 typedef unsigned int uint;
 using namespace std;
+
+void clearScreen() {
+#ifdef _WIN32
+  system("cls");
+#endif
+
+#ifdef __unix__
+  system("clear");
+#endif
+}
 
 
 	tile::tile() {
@@ -51,7 +60,7 @@ using namespace std;
 	};
 
     void game2048::drawBoard(){
-	system("cls");
+       clearScreen();
 	cout << "SCORE: " << score << endl << endl;
 	for(int y = 0; y < 4; y++){
 	    cout << "+------+------+------+------+" << endl << "| ";
