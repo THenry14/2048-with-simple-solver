@@ -2,12 +2,22 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include <conio.h>
 #include <thread>
 #include <chrono>
 
 typedef unsigned int uint;
 using namespace std;
+
+int getch() {
+#ifdef __WIN32
+#include <conio.h>
+  return _getch();
+#endif
+
+#ifdef __unix__
+  return getchar();
+#endif
+}
 
 void clearScreen() {
 #ifdef _WIN32
@@ -116,7 +126,7 @@ void clearScreen() {
     void game2048::waitKey(){
 	moved = false;
 	cout << "(W)Up (S)Down (A)Left (D)Right (P)AI Solver \n\n";
-	switch(_getch()){
+	switch(getch()){
 	    case 'w': move( UP );break;
 	    case 'a': move( LEFT ); break;
 	    case 's': move( DOWN ); break;
