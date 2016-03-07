@@ -3,6 +3,8 @@
 #include <string>
 #include <iomanip>
 #include <conio.h>
+#include <thread>
+#include <chrono>
 
 typedef unsigned int uint;
 using namespace std;
@@ -105,7 +107,8 @@ void clearScreen() {
 		for( int y = 0; y < 4; y++ )
 	    	for( int x = 0; x < 4; x++ )
 			board[x][y].blocked = false;
-		_sleep(50);											// The solver is a kind of 'brute force'. It's no pretty, but pretty effective.
+               // The solver is a kind of 'brute force'. It's no pretty, but pretty effective.
+               std::this_thread::sleep_for(std::chrono::milliseconds(50));
 		}
 
 	void game2048::checkResult(){
