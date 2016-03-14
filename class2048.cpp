@@ -5,12 +5,15 @@
 #include <thread>
 #include <chrono>
 
+#ifdef __WIN32
+#include <conio.h>
+#endif
+
 typedef unsigned int uint;
 using namespace std;
 
 int getch() {
 #ifdef __WIN32
-#include <conio.h>
   return _getch();
 #endif
 
@@ -28,8 +31,6 @@ void clearScreen() {
   system("clear");
 #endif
 }
-
-
 	tile::tile() {
 		value = 0;
 		blocked = false;
